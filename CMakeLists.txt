@@ -30,7 +30,7 @@ if(NOT ARCH IN_LIST SUPPORTED_ARCHES)
   message(FATAL_ERROR "Unsupported ARCH: ${ARCH}")
 endif()
 
-set(IMAGE_NAME "TemplateOS")
+set(IMAGE_NAME "LuminaOS")
 
 # Include architecture and kernel flags
 include(arch-flags)
