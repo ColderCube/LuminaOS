@@ -4,25 +4,31 @@
 add_executable(kernel)
 
 # Modular source organization
-target_sources(kernel PRIVATE
-    src/boot/main.cpp
-)
-
-# Core module
-target_sources(kernel PRIVATE
-    src/core/kernel.cpp
-    src/core/kernel.h
-)
+# target_sources(kernel PRIVATE
+#     src/boot/main.cpp
+# )
+#
+# # Core module
+# target_sources(kernel PRIVATE
+#     src/core/kernel.cpp
+#     src/core/kernel.h
+# )
 
 # Render module
-target_sources(kernel PRIVATE
-    src/render/BasicRenderer.cpp
-    src/render/BasicRenderer.hpp
-)
-
+# target_sources(kernel PRIVATE
+#     src/render/BasicRenderer.cpp
+#     src/render/BasicRenderer.hpp
+# )
+#
 # Include directories
+
+file(GLOB_RECURSE KERNEL_SOURCES  "./src/*.c" "./src/*.cpp")
+
+target_sources(kernel PRIVATE ${KERNEL_SOURCES})
+
 target_include_directories(kernel PRIVATE
     src
+    include
 )
 
 # Link external dependencies
